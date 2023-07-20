@@ -6,7 +6,7 @@
 /*   By: albriffa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 12:00:01 by albriffa          #+#    #+#             */
-/*   Updated: 2023/07/12 18:34:11 by albriffa         ###   ########.fr       */
+/*   Updated: 2023/07/18 17:34:42 by albriffa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 int	ft_sqrt(int nb)
 {
-	int	i;
+	int	k;
 
-	i = 1;
+	k = 1;
+	if (nb > 2147395600)
+		return (0);
+	if (nb <= 0)
+		return (0);
 	if (nb == 1)
 		return (1);
-	while (nb > i)
+	while ((k * k) <= nb)
 	{
-		if (i * i == nb)
-			return (i);
-		i++;
+		if ((k * k) == nb)
+			return (k);
+		k++;
 	}
 	return (0);
 }
 /*
 int	main()
 {
-	printf("%d", ft_sqrt(9));
-}
-*/
+	printf("%d", ft_sqrt(13351716));
+}*/
